@@ -1,1 +1,0 @@
-{"data":{"event":"DISCONNECTED","sessionId":"4ba2d4e5-3e79-403f-ba49-182dc36e0df7","reason":"loggedOut"},"headers":{"Accept":"application/json"}}

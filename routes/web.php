@@ -50,8 +50,9 @@ Route::prefix('/admin')->controller(DeviceController::class)->group(function () 
         Route::get('/getStatus', 'getStatus');
     });
 
-    oute::prefix('/clientes')->controller(CustomerController::class)->group(function () {
+    Route::prefix('/clientes')->controller(CustomerController::class)->group(function () {
         Route::get('/', 'index')->name('admin.customer.index');
+        Route::get('/getCustomers', 'getCustomers');
     });
    
     Route::prefix('/chat-bot')->controller(ChatBotController::class)->group(function () {

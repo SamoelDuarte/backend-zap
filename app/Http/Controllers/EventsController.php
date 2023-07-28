@@ -18,19 +18,19 @@ class EventsController extends Controller
     {
         $reponseJson = file_get_contents('php://input');
 
-        file_put_contents(Utils::createCode().".txt",$reponseJson);
+       // file_put_contents(Utils::createCode().".txt",$reponseJson);
         $reponseArray = json_decode($reponseJson, true);
         $session = Device::where('session', $reponseArray['data']['sessionId'])->first();
 
         // verifica se o serviço está em andamento
 
-       $active = 0;
+       $active = 1;
        if ($active) {
       
             $this->verifyService($reponseArray, $session);
        }
 
-         file_put_contents(Utils::createCode().".txt",$reponseJson);
+       //  file_put_contents(Utils::createCode().".txt",$reponseJson);
     }
 
     public function teste()

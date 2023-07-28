@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Customers extends Model
 {
     use HasFactory;
-
+    protected $table = 'customers';
     protected $appends = [
         'phone',
-        'location'
+        'location',
+        'display_created_at'
     ];
     protected $fillable = [
         'name',
@@ -22,6 +23,8 @@ class Customers extends Model
         'city',
         'state',
         'number',
+        'created_at',
+        'updated_at'
     ];
 
 
@@ -29,6 +32,11 @@ class Customers extends Model
     {
         return explode('@', $this->jid)[0];
     }
+
+    public function getDisplayCreatedAtAttribute()
+{
+    return date('d/m/Y', strtotime($this->created_at));
+}
 
     public function getLocationAttribute($number)
     {
