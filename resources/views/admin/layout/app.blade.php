@@ -76,8 +76,14 @@
                     <span>Dispositivos</span>
                 </a>
             </li>
+             <li class="nav-item">
+                <a href="{{ route('admin.customer.index') }}" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+            </li> 
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('admin.chatbot.index') }}" class="nav-link">
                     <i class="far fa-images"></i>
                     <span>Chat Bots</span>
@@ -89,7 +95,7 @@
                     <i class="fas fa-users"></i>
                     <span>Usuários</span>
                 </a>
-            </li>
+            </li> --}}
 
 
 

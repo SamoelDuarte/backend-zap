@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChatBotController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\EventsController;
 use App\Models\ChatBot;
@@ -47,6 +48,10 @@ Route::prefix('/admin')->controller(DeviceController::class)->group(function () 
         Route::post('/updateStatus', 'updateStatus');
         Route::post('/updateName', 'updateName');
         Route::get('/getStatus', 'getStatus');
+    });
+
+    oute::prefix('/clientes')->controller(CustomerController::class)->group(function () {
+        Route::get('/', 'index')->name('admin.customer.index');
     });
    
     Route::prefix('/chat-bot')->controller(ChatBotController::class)->group(function () {
